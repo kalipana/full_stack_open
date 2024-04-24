@@ -6,17 +6,38 @@ const Button = (props) => (
   </button>
 )
 
-const Statistics = (props) => (
-  <div>
-    <h1>statistics</h1>
-    <p>good {props.good}</p>
-    <p>neutral {props.neutral}</p>
-    <p>bad {props.bad}</p>
-    <p>all {props.count}</p>
-    <p>average {props.sum / props.count}</p>
-    <p>positive {(props.good/props.count)*100}%</p>
-  </div>
+const StatisticLine = (props) => (
+  <tbody>
+    <tr>
+      <td>{props.text}</td>
+      <td>{props.value}</td>
+    </tr>
+  </tbody>
 )
+
+const Statistics = (props) => {
+  if (props.count == 0) {
+    return (
+      <div>
+        <h1>statistics</h1>
+        <p>No feedback given</p>
+      </div>
+    )
+  }
+  return (
+    <div>
+      <h1>statistics</h1>
+      <table>
+        <StatisticLine text="good" value={props.good} />
+        <StatisticLine text="neutral" value={props.neutral} />
+        <StatisticLine text="bad" value={props.bad} />
+        <StatisticLine text="all" value={props.count} />
+        <StatisticLine text="average" value={props.sum / props.count} />
+        <StatisticLine text="positive" value={(props.good / props.count) * 100 + '%'} />
+      </table>
+    </div>
+  )
+}
 
 const App = () => {
   const [good, setGood] = useState(0)
