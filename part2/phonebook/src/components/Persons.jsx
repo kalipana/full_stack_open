@@ -1,9 +1,15 @@
-const Persons = ({ persons, newSearch }) => {
+const Persons = ({ persons, newSearch, handleDelete }) => {
     const filteredPersons = persons.filter(person => person.name.slice(0, newSearch.length).toLowerCase() === newSearch.toLowerCase())
+    console.log(filteredPersons)
     return (
-        <ul>
-            {filteredPersons.map(person => <li key={person.id}>{person.name} {person.number}</li>)}
-        </ul>
+        <div>
+            {filteredPersons.map(person => (
+                <div key={person.id}>
+                    {person.name} {person.number}
+                    <button onClick={handleDelete(person)}>delete</button>
+                </div>
+            ))}
+        </div>
     )
 }
 
