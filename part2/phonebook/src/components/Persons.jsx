@@ -1,6 +1,5 @@
 const Persons = ({ persons, newSearch, handleDelete }) => {
     const filteredPersons = persons.filter(person => person.name.slice(0, newSearch.length).toLowerCase() === newSearch.toLowerCase())
-    console.log(filteredPersons)
     return (
         <div>
             {filteredPersons.map(person => (

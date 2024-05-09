@@ -1,19 +1,14 @@
 {
   "persons": [
     {
+      "id": "23a6",
       "name": "hello",
-      "number": "123",
-      "id": "e0ed"
+      "number": "123"
     },
     {
+      "id": "0046",
       "name": "Arto Hellas",
-      "number": "123",
-      "id": "7a83"
-    },
-    {
-      "id": "f627",
-      "name": "Dan Abromov",
-      "number": "9889384"
+      "number": "2039489"
     }
   ]
 }
