@@ -38,7 +38,6 @@ const App = () => {
           //change persons number to new number
           personService.update(persons[i].id, personObject).then(response => {
             const newPersons = [...persons]
-            console.log(response)
             newPersons[i].number = response.data.number
             setPersons(newPersons)
             setNewName('')
