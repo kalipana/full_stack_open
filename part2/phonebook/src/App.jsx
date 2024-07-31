@@ -38,6 +38,7 @@ const App = () => {
           //change persons number to new number
           personService.update(persons[i].id, personObject).then(response => {
             const newPersons = [...persons]
+            console.log(response)
             newPersons[i].number = response.data.number
             setPersons(newPersons)
             setNewName('')
@@ -91,7 +92,7 @@ const App = () => {
     if (window.confirm(`Delete ${person.name}?`)) {
       personService.remove(person.id).then(response => {
         setPersons(persons.filter(p => p.id !== response.data.id))
-
+        console.log(response)
         //update message for person deleted
         setMessage(`Removed ${response.data.name}`)
           setTimeout(() => {
