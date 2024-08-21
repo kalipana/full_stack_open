@@ -48,6 +48,12 @@ const App = () => {
             setTimeout(() => {
               setMessage(null)
             }, 3000)
+          }).catch(error => {
+            console.log(error.response.date.error)
+            setErrorMessage(error.response.data.error)
+            setTimeout(() => {
+              setErrorMessage(null)
+            }, 3000)
           })
         }
 
@@ -70,6 +76,12 @@ const App = () => {
         setMessage(`Added ${response.data.name}`)
         setTimeout(() => {
           setMessage(null)
+        }, 3000)
+      }).catch(error => {
+        setErrorMessage(error.response.data.error)
+        console.log(error.response.data.error)
+        setTimeout(() => {
+          setErrorMessage(null)
         }, 3000)
       })
     }
