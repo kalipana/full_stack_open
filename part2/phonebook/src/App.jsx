@@ -49,7 +49,7 @@ const App = () => {
               setMessage(null)
             }, 3000)
           }).catch(error => {
-            console.log(error.response.date.error)
+            console.log(error.response.data.error)
             setErrorMessage(error.response.data.error)
             setTimeout(() => {
               setErrorMessage(null)
